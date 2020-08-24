@@ -16,16 +16,14 @@ app.set('views', 'views');
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({extended: true}));
 
-
+const error = require('./controllers/error')
 const adminData = require('./routes/admin');
 const shopRoutes = require('./routes/shop');
 
-app.use('/admin', adminData.routes);
+app.use('/admin', adminData);
 app.use(shopRoutes);
 
-app.use((req, res, next) => {
-    res.status(404).render('404' , {pageTitle: 'Page Not Found'});
-})
+app.use(error.get404)
 
 //server port 
 app.listen(3000);
