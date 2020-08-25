@@ -6,10 +6,10 @@
 }
 
 .product-item {
-    width: 20rem;
-    max-width: 95%;
-    margin: 1rem;
+    width:50%;
+    height:50%;
 }
+
 
 .product__title {
     font-size: 1.2rem;

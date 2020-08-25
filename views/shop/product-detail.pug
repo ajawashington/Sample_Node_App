@@ -1,11 +1,17 @@
-extends layouts/main-layout.pug 
+extends ../layouts/main-layout.pug 
 
 block content
     main.centered
-        h1 #{product.title}
+        h2 #{product.title}
         hr
         .image
-            img(src="#{product.imageUrl}" alt="#{product.title}")
+            img(src=`${product.imageUrl}` )
         h2 #{product.price}
-            p #{product.description}
-            include ../partials/add-to-cart.pug
+        p #{product.description}
+        include ../partials/add-to-cart.pug
+        .card__actions
+            a.btn(href=`/admin/edit-product/${product.prodId}?edit=true`) Edit
+            form(action="/admin/delete-product" method="POST")
+                input(type="hidden" value=`${product.prodId}` name="productId")
+                button.btn(type="submit") Delete
+    

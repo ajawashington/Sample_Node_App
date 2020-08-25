@@ -1,4 +1,4 @@
-extends layouts/main-layout.pug 
+extends ../layouts/main-layout.pug 
 
 
 block styles 
@@ -13,12 +13,12 @@ block content
                             header.card_header
                                 h1.product__title #{product.title} 
                             .card_image
-                                img(src="#{product.imageUrl}" alt="#{product.title}")
+                                img(src=`${product.imageUrl}` alt=`${product.title}`)
                             .card__content
                                 h2.product__price #{product.price}
                                 p.product__description #{product.description}
                             .card__actions
-                                a(href="#{product.id}")
+                                a.btn(href=`/products/${product._id}`) Details
                                 include ../partials/add-to-cart.pug
             else 
                 h1 No Products

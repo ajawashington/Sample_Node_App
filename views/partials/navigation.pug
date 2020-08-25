@@ -1,27 +1,17 @@
-nav.main-header__nav
-    style
-        include ../../public/css/main.css
-    ul.main-header__item-list
-        li.main-header__item
-            a(href="/",  class=(path=== '/' ? 'active':'')) Shop
-        li.main-header__item
-            a(href="/admin/add-product", class=(path=== '/admin/add-product' ? 'active':'')) Add Product
-
-div.backdrop
+div
     header.main-header
         button#side-menu-toggle Menu
         nav.main-header__nav
             ul.main-header__item-list
                 li.main-header__item
-                    a(class="<%= path === '/' ? 'active' : '' %>" href="/") Shop
-
+                    a(class="#{ path === '/' ? 'active' : '' }" href="/") Shop
                 li.main-header__item
-                    a(class="<%= path === '/products' ? 'active' : '' %>" href="/products") Products
+                    a(class="#{ path === '/products' ? 'active' : '' }" href="/products") Products
                 li.main-header__item
-                    a(class="<%= path === '/cart' ? 'active' : '' %>" href="/cart") Cart
+                    a(class="#{ path === '/cart' ? 'active' : '' }" href="/cart") Cart
                 li.main-header__item
-                    a(class="<%= path === '/orders' ? 'active' : '' %>" href="/orders") Orders
+                    a(class="#{ path === '/orders' ? 'active' : '' }" href="/orders") Orders
                 li.main-header__item
-                    a(class="<%= path === '/admin/add-product' ? 'active' : '' %>" href="/admin/add-product") Add Product
+                    a(class="#{ path === '/admin/add-product' ? 'active' : '' }" href="/admin/add-product") Add Product
                 li.main-header__item
-                    a(class="<%= path === '/admin/products' ? 'active' : '' %>" href="/admin/products") Admin Products
+                    a(class="#{ path === '/admin/products' ? 'active' : '' }" href="/admin/products") Admin Products
