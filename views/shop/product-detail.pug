@@ -10,8 +10,8 @@ block content
         p #{product.description}
         include ../partials/add-to-cart.pug
         .card__actions
-            a.btn(href=`/admin/edit-product/${product.prodId}?edit=true`) Edit
+            a.btn(href=`/admin/edit-product/${product._id}?edit=true`) Edit
             form(action="/admin/delete-product" method="POST")
-                input(type="hidden" value=`${product.prodId}` name="productId")
+                input(type="hidden" value=`${product._id}` name="productId")
                 button.btn(type="submit") Delete
     

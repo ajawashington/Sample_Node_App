@@ -1,5 +1,2 @@
 .DS.Store
-
 node_modules
-
-util.database
