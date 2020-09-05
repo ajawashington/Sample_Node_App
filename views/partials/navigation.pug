@@ -4,17 +4,21 @@ div
         nav.main-header__nav
             ul.main-header__item-list
                 li.main-header__item
-                    a(class=`${ path === '/' ? 'active' : '' }` href="/products") Shop
+                    a(class=`${ path === '/login' ? 'active' : '' }` href="/login") Login
+            ul.main-header__item-list
                 li.main-header__item
-                    a(class=`${ path === '/products' ? 'active' : '' }` href="/products") Products
+                    a(class=`${ path === '/products' ? 'active' : '' }` href="/products") Shop
                 li.main-header__item
                     a(class=`${ path === '/cart' ? 'active' : '' }` href="/cart") Cart
                 li.main-header__item
                     a(class=`${ path === '/orders' ? 'active' : '' }` href="/orders") Orders
-                //- li.main-header__item
-                //-     a(class=`${ path === '/add-product' ? 'active' : '' }` href="/admin/add-product") Add Product
-                //- li.main-header__item
-                //-     a(class=`${ path === '/products' ? 'active' : '' }` href="/admin/products") Admin Products
-            ul.main-header__item-list
+            if isAuthenicated === "false"
                 li.main-header__item
-                    a(class=`${ path === '/login' ? 'active' : '' }` href="/login") Login
+                    a(class=`${ path === '/add-product' ? 'active' : '' }` href="/admin/add-product") Add Product
+                li.main-header__item
+                    a(class=`${ path === '/products' ? 'active' : '' }` href="/admin/products") Admin Products
+            else
+                li.main-header__item
+                    a(class=`${ path === '/add-product' ? 'active' : '' }` href="/admin/add-product") test
+
+            
