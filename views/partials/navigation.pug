@@ -4,14 +4,27 @@ div
         nav.main-header__nav
             ul.main-header__item-list
                 li.main-header__item
-                    a(class="#{ path === '/' ? 'active' : '' }" href="/") Shop
+                    a(class=`${ path === '/products' ? 'active' : '' }` href="/products") Shop
                 li.main-header__item
-                    a(class="#{ path === '/products' ? 'active' : '' }" href="/products") Products
+                    a(class=`${ path === '/cart' ? 'active' : '' }` href="/cart") Cart
                 li.main-header__item
-                    a(class="#{ path === '/cart' ? 'active' : '' }" href="/cart") Cart
-                li.main-header__item
-                    a(class="#{ path === '/orders' ? 'active' : '' }" href="/orders") Orders
-                li.main-header__item
-                    a(class="#{ path === '/admin/add-product' ? 'active' : '' }" href="/admin/add-product") Add Product
-                li.main-header__item
-                    a(class="#{ path === '/admin/products' ? 'active' : '' }" href="/admin/products") Admin Products
+                    a(class=`${ path === '/orders' ? 'active' : '' }` href="/orders") Orders
+                if isAuthenicated === true
+                    li.main-header__item
+                        a(class=`${ path === '/add-product' ? 'active' : '' }` href="/admin/add-product") Add Product
+                    li.main-header__item
+                        a(class=`${ path === '/products' ? 'active' : '' }` href="/admin/products") Admin Products
+                else
+                    li.main-header__item
+                        a(class=`${ path === '/' ? 'active' : '' }` href="") Register!
+
+            ul.main-header__item-list
+                    li.main-header__item
+                        a(class=`${ path === '/login' ? 'active' : '' }` href="/login") Login
+                    li.main-header__item
+                        form(action="/logout" method="post")
+                            button(type="submit") Logout
+
+
+
+            
