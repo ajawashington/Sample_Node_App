@@ -9,7 +9,7 @@ const MongoDBStore = require('connect-mongodb-session')(session);
 const errorController = require('./controllers/error');
 const User = require('./models/user');
 
-const MONGODB_URI = 'mongodb+srv://ayejah:9jc5jTOsJgMr1ssn@initial-cluster.qzync.mongodb.net/shop?retryWrites=true&w=majority'
+const MONGODB_URI = process.env
 
 const app = express();
 const store = new MongoDBStore({
